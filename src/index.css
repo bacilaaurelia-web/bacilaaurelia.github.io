@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+  
+  --color-primary: #546250;
+  --color-on-primary: #ecfde4;
+  --color-surface: #f9f9f8;
+  --color-on-surface: #2c3433;
+  --color-on-surface-variant: #586160;
+  --color-outline-variant: #abb4b3;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-serif selection:bg-primary/20;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.markdown-body h2 {
+  @apply text-3xl font-bold tracking-tight text-on-surface mt-16 mb-6 font-sans;
+}
+
+.markdown-body h3 {
+  @apply text-xl font-bold tracking-tight text-on-surface mt-8 mb-4 font-sans;
+}
+
+.markdown-body p {
+  @apply mb-6 leading-relaxed text-lg;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 mb-6 space-y-2;
+}
+
+.markdown-body li {
+  @apply text-lg;
+}
